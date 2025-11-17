@@ -1,8 +1,8 @@
 # 不忽略docs目录（用于GitHub Pages部署）
-docs/
+# /docs/
 
 # 忽略data目录中的大文件
-data/
+/data/
 
 # Python
 __pycache__/
