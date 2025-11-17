@@ -932,7 +932,7 @@ function renderReplies(replies) {{
         
         const cardClass = isAuthorResponse ? 'reply-card author-reply' : 'reply-card';
         
-        html += `<div class="${{cardClass}}" data-reply-filter="${{filterType}}">`;
+        html += `<div class="${{cardClass}}" data-reply-filter="${{filterType}}" data-reply-id="${{replyId}}">`;
         html += `<div class="reply-header"><div class="reply-meta">`;
         html += `<strong>${{reviewer}}</strong>`;
         if (isAuthorResponse) {{
@@ -1079,22 +1079,17 @@ async function loadNestedReplies(paperId) {{
                 if (!replyTree[replyTo]) replyTree[replyTo] = [];
                 replyTree[replyTo].push(reply);
             }});
-            
+
             // 为每个direct reply添加nested replies
             let nestedCount = 0;
             document.querySelectorAll('.reply-card').forEach(card => {{
-                const versionToggle = card.querySelector('.version-toggle');
-                let replyId = null;
-                
-                if (versionToggle) {{
-                    const match = versionToggle.getAttribute('onclick').match(/'([^']+)'/);
-                    if (match) replyId = match[1];
-                }}
-                
+                // 直接从 data-reply-id 获取 replyId
+                const replyId = card.dataset.replyId;
+
                 if (replyId && replyTree[replyId]) {{
                     const nestedReplies = replyTree[replyId];
                     nestedReplies.sort((a, b) => (a.cdate || 0) - (b.cdate || 0));
-                    
+
                     const nestedContainer = document.createElement('div');
                     nestedContainer.className = 'nested-replies';
                     nestedContainer.style.marginLeft = '30px';
