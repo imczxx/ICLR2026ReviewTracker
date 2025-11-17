@@ -84,6 +84,23 @@ header h1 { text-align: center; font-size: 2em; font-weight: 600; color: #1a1a1a
 .old-versions.show { display: block; }
 .version-item { padding: 10px; margin: 6px 0; background: #fafafa; border-radius: 4px; font-size: 0.88em; border: 1px solid #e5e5e5; }
 .stats { text-align: center; padding: 12px; background: #fafafa; border-radius: 6px; margin-bottom: 20px; font-size: 0.9em; color: #666; border: 1px solid #e5e5e5; }
+.search-container { background: #fafafa; padding: 18px 20px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #e5e5e5; }
+.search-box { display: flex; gap: 10px; align-items: center; }
+.search-input { flex: 1; padding: 10px 15px; border: 1px solid #d0d0d0; border-radius: 5px; font-size: 14px; font-family: inherit; }
+.search-input:focus { outline: none; border-color: #1a1a1a; }
+.search-btn { padding: 10px 20px; background: #1a1a1a; color: #ffffff; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; font-weight: 500; transition: all 0.2s; }
+.search-btn:hover { background: #333; }
+.search-btn:disabled { background: #ccc; cursor: not-allowed; }
+.clear-search-btn { padding: 10px 20px; background: #ffffff; color: #333; border: 1px solid #d0d0d0; border-radius: 5px; cursor: pointer; font-size: 14px; font-weight: 500; transition: all 0.2s; }
+.clear-search-btn:hover { border-color: #1a1a1a; background: #fafafa; }
+.search-status { margin-top: 10px; font-size: 0.9em; color: #666; }
+.search-status strong { color: #1a1a1a; }
+.pagination-container { margin-top: 12px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: center; }
+.page-btn { padding: 6px 12px; background: #ffffff; color: #333; border: 1px solid #d0d0d0; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 500; transition: all 0.2s; }
+.page-btn:hover { border-color: #1a1a1a; background: #fafafa; }
+.page-btn.active { background: #1a1a1a; color: #ffffff; border-color: #1a1a1a; }
+.page-btn:disabled { background: #f5f5f5; color: #999; cursor: not-allowed; border-color: #e0e0e0; }
+.page-info { font-size: 0.85em; color: #666; }
 </style>
     <script>
     MathJax = {
