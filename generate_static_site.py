@@ -708,7 +708,7 @@ def generate_paper_template_html():
         </div>
     </header>
     <div class="container">
-        <a href="javascript:history.back()" class="back-link">← Back to list</a>
+        <a href="javascript:void(0)" onclick="goBack()" class="back-link">← Back to list</a>
         <div id="loading" style="text-align: center; padding: 40px; color: #666;">
             <div style="font-size: 1.2em; margin-bottom: 10px;">Loading paper...</div>
             <div style="font-size: 0.9em;">Please wait</div>
@@ -717,6 +717,17 @@ def generate_paper_template_html():
     </div>
     <script>{generate_js()}</script>
     <script>
+// 智能返回函数
+function goBack() {{
+    // 检查是否有 referrer 且来自同一站点
+    if (document.referrer && document.referrer.includes(window.location.host)) {{
+        history.back();
+    }} else {{
+        // 如果是直接打开或来自外部链接，跳转到主页
+        window.location.href = 'index.html';
+    }}
+}}
+
 // 加载论文详情
 async function loadPaper() {{
     const paperId = location.hash.slice(1);
