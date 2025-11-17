@@ -1,0 +1,28 @@
+# 不忽略docs目录（用于GitHub Pages部署）
+docs/
+
+# 忽略data目录中的大文件
+data/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
